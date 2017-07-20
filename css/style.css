@@ -1,0 +1,32 @@
+/*******************
+* Generic
+*******************/
+
+body {
+	font-family: Arial,Helvetica,sans-serif;
+	background: #efefef;
+}
+
+/*******************
+* Media Queries
+*******************/
+
+@media (min-width: 1220px) and (max-width: 2000px) {
+	
+}
+
+@media (min-width: 1010px) and (max-width: 1220px) {
+	
+}
+
+@media (min-width: 650px) and (max-width: 1010px) {
+	
+}
+
+@media (max-width: 650px) {
+
+}
+
+@media screen and (max-width: 480px) {
+	
+}
