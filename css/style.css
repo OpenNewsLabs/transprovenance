@@ -151,19 +151,22 @@ body[data-view="transcript"] .timelineContainer .ui-slider-range {
 
 body[data-view="transcript"] .timelineContainer .ui-slider-handle {
 	top: auto;
+	left: 0px;
 	bottom: auto;
 	height: 16px;
 	width: 100%;
 	margin-left: 0px;
-	margin-bottom: -8px;
+	margin-bottom: -13px;
 }
 
 
 body[data-view="transcript"] .timelineContainer .ui-slider-handle:after {
-	border-top: 12px solid #000000;
-	border-bottom: 12px solid #000000;
-	border-left: 8px solid transparent;
-	border-right: none;
+	left: auto;
+	right: 0px;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+	border-right: 8px solid #000;
+	border-left: none;
 }
 
 .controlsContainer {
