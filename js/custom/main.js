@@ -66,6 +66,8 @@ $(document).ready( function() {
 		updater();
 	});
 
+	$('.fullContainer').click(hideOriginalSource);
+
 	loadTranscriptText("./data/recap-transcript.json", 'transcript', 'video');
 	loadTranscriptText('./data/full-transcript.json', 'transcript__original', 'original1')
 

@@ -21,7 +21,7 @@ body * {
 }
 
 .unread {
-	color: gray;
+	color: #afafaf;
 }
 
 .fullContainer {
@@ -38,8 +38,8 @@ body[data-view="transcript"] .fullContainer {
 	top: 50%;
 	left: 10px;
 	width: 400px;
-	height: 400px;
-	margin-top: -240px;
+	height: 600px;
+	margin-top: -300px;
 	margin-left: 0px;
 	background: white;
 	padding: 1em;
@@ -59,10 +59,11 @@ body[data-view="transcript"] .timelineContainer {
 body[data-view="transcript"] .originalContainer {
 	top: 50%;
 	right: 10px;
-	width: 400px;
-	height: 400px;
-	margin-top: -240px;
+	width: 200px;
+	height: 300px;
+	margin-top: -150px;
 	margin-left: 0px;
+	margin-right: 0px;
 	background: white;
 	padding: 1em;
 }
@@ -114,10 +115,11 @@ body[data-view="video"] .transcriptContainer {
 	height: 120px;
 	margin-right: -100px;
 	background: #312e2e;
+	opacity: 0;
 }
 
-body[data-view="transcript"] .originalContainer {
-	margin-right: 0px;
+[data-original="yes"] .originalContainer {
+	opacity: 1;
 }
 
 .videoContainer {
@@ -262,7 +264,7 @@ body[data-view="transcript"] .timelineContainer .ui-slider-handle:after {
 }
 
 body[data-view="transcript"] .controlsContainer {
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 /*******************
