@@ -1,28 +1,26 @@
-var videoDuration = 60,
-	updaterInterval,
+var updaterInterval,
 	isPlaying;
 
 $(document).ready( function() {
 
-	$('.timelineContainer').slider({
-		value: 0,
-		step: 0.01,
-		orientation: "horizontal",
-		range: "min",
-		max: videoDuration,
-		animate: false,
-		create: function(evt, ui) {
-			// on create
-		},
-		slide: function(evt, ui) {
-			setCurrentTime(ui.value);
-		},
-		stop: function(evt, ui) {
-			//setCurrentTime(ui.value);
-		}
-	});
-
 	$('#video').on('loadedmetadata', function() {
+		$('.timelineContainer').slider({
+			value: 0,
+			step: 0.01,
+			orientation: "horizontal",
+			range: "min",
+			max: $('#video')[0].duration,
+			animate: false,
+			create: function(evt, ui) {
+				// on create
+			},
+			slide: function(evt, ui) {
+				setCurrentTime(ui.value);
+			},
+			stop: function(evt, ui) {
+				//setCurrentTime(ui.value);
+			}
+		});
 		initVideo();
 		$('.videoDuration').text( formatTime($('#video')[0].duration) );
 	});
