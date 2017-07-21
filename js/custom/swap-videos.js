@@ -10,7 +10,8 @@ var annotations = [
     "source": "media/demo-full.mp4",
     "transcriptSource": "data/full-transcript.json",
     "start": 77,
-    "end": 122
+    "end": 122,
+    "originalStart": 1234
   }
 ];
 
@@ -43,7 +44,7 @@ function renderAnnotations(annotationItems, axis) {
     var leftPercent = convertToPercentage(thisItem.start, $('#video')[0].duration),
         widthPercent = convertToPercentage(thisItem.end - thisItem.start, $('#video')[0].duration);
 
-    var timelineItem = $('<div class="timelineItem" data-source="'+ thisItem.source +'" data-transcript-source="'+ thisItem.transcriptSource +'" data-start="'+ thisItem.start +'" data-end="'+ thisItem.end +'" ></div>');
+    var timelineItem = $('<div class="timelineItem" data-source="'+ thisItem.source +'" data-transcript-source="'+ thisItem.transcriptSource +'" data-start="'+ thisItem.start +'" data-end="'+ thisItem.end +'" data-original-start="'+ thisItem.originalStart +'" ></div>');
 
     if (axis == 'x') {
       timelineItem.css({
