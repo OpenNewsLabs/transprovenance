@@ -40,6 +40,7 @@ $(document).ready( function() {
 		$(this).addClass('active');
 		$('body').attr('data-view', 'video');
 		$('.timelineContainer').slider('option', 'orientation', 'horizontal');
+		renderAnnotations(annotations, 'x');
 	});
 
 	$('.globalControl#transcriptControl').click(function() {
@@ -47,6 +48,7 @@ $(document).ready( function() {
 		$(this).addClass('active');
 		$('body').attr('data-view', 'transcript');
 		$('.timelineContainer').slider('option', 'orientation', 'vertical');
+		renderAnnotations(annotations, 'y');
 	});
 
 	loadTranscriptText();
@@ -61,7 +63,7 @@ function initVideo() {
 		updater();
 	});
 
-	renderAnnotations(annotations);
+	renderAnnotations(annotations, 'x');
 }
 
 function setCurrentTime(seconds) {
@@ -100,42 +102,31 @@ function updater() {
 
 function updateMediaActiveStates(time) {
 
-	console.log("update active states");
+	//console.log("update active states");
 	updateScrolling();
 
-	/*
-	var mediaElement;
+	
+	var timelineItems = $('.timelineItem');
 
-	for (var i=0; i<mediaElements.length; i++) {
+	timelineItems.each(function() {
+		var currentItem = $(this),
+			startTime = parseInt( currentItem.attr('data-start') ),
+			endTime = parseInt( currentItem.attr('data-end') );
 
-		mediaElement = mediaElements[i];
-
-		if ( mediaElement.start <= time && mediaElement.end >= time ) {
-
-			if (!mediaElement.active) {
-				mediaElement.active = true;
-				mediaElement.element.show();
-			}
-
-			if (mediaElement.type == 'Video' || mediaElement.type == 'Audio') {
-
-				if (mediaElement.element[0].currentTime > mediaElement.element[0].duration - mediaElement.endOffset) {
-					mediaElement.element[0].pause();
-				}
-
+		if ( startTime <= time && endTime >= time ) {
+			console.log(startTime);
+			if (!currentItem.hasClass('active')) {
+				currentItem.addClass('active');
 			}
 
 		} else {
 
-			if (mediaElement.active) {
-				mediaElement.active = false;
-				mediaElement.element.hide();
+			if (currentItem.hasClass('active')) {
+				currentItem.removeClass('active');
 			}
 
 		}
-
-	}
-	*/
+	});
 
 }
 

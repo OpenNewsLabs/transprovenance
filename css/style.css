@@ -130,6 +130,17 @@ body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] 
 	background: #ff0000;
 }
 
+body[data-view="transcript"] .timelineItem {
+	bottom: auto;
+	height: auto;
+	width: 10px;
+	right: -10px;
+}
+
+.timelineItem.active {
+	background: #00ff00;
+}
+
 .timelineContainer .ui-slider-range {
 	background: #888888;
 	box-sizing: border-box;
