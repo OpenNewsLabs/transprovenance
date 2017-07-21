@@ -3,13 +3,26 @@
 *******************/
 
 body {
+	padding-top: 70px;
 	font-family: Arial,Helvetica,sans-serif;
 	background: #efefef;
+}
+
+body * {
+	transition-property: all;
+	transition-duration: 400ms;
+}
+
+#globalControls {
+	position: fixed;
+	top: 10px;
+	right: 16px;
 }
 
 .videoContainer, .originalContainer {
 	position: relative;
 	width: 100%;
+	margin-top: 10px;
 	min-height: 400px;
 	background: #00ff00;
 }
@@ -20,6 +33,11 @@ body {
 	left: 0px;
 	width: 100%;
 	height: 100%;
+	opacity: 0;
+}
+
+body[data-view="video"] video {
+	opacity: 1;
 }
 
 .videoContainer .transcriptContainer, .originalContainer .originalTranscriptContainer {
@@ -28,6 +46,11 @@ body {
 	left: 0px;
 	width: 100%;
 	height: 100%;
+	opacity: 0;
+}
+
+body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] .originalTranscriptContainer {
+	opacity: 1;
 }
 
 .timelineContainer {

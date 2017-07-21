@@ -26,9 +26,21 @@ $(document).ready( function() {
 		initVideo();
 		$('.videoDuration').text( formatTime($('#video')[0].duration) );
 	});
-	
+
 	$('.playButton').click(playVideo);
 	$('.pauseButton').click(pauseVideo);
+
+	$('.globalControl#videoControl').click(function() {
+		$('.globalControl').removeClass('active');
+		$(this).addClass('active');
+		$('body').attr('data-view', 'video');
+	});
+
+	$('.globalControl#transcriptControl').click(function() {
+		$('.globalControl').removeClass('active');
+		$(this).addClass('active');
+		$('body').attr('data-view', 'transcript');
+	});
 	
 });
 
