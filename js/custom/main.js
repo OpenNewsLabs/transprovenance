@@ -30,6 +30,18 @@ $(document).ready( function() {
 	$('.playButton').click(playVideo);
 	$('.pauseButton').click(pauseVideo);
 
+	$('.globalControl#videoControl').click(function() {
+		$('.globalControl').removeClass('active');
+		$(this).addClass('active');
+		$('body').attr('data-view', 'video');
+	});
+
+	$('.globalControl#transcriptControl').click(function() {
+		$('.globalControl').removeClass('active');
+		$(this).addClass('active');
+		$('body').attr('data-view', 'transcript');
+	});
+
 	hyperaudiolite.init('transcript', 'video');
 });
 
