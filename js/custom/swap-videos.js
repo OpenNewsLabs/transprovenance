@@ -56,7 +56,7 @@ function renderAnnotations(annotationItems, axis) {
 
 
     timelineItem.click(function(evt) {
-      alert( $(this).attr('data-source') );
+      showOriginalSource( $(this).attr('data-source') );
       evt.preventDefault();
       evt.stopPropagation();
       return false;
