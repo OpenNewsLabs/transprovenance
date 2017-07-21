@@ -188,9 +188,23 @@ body[data-view="transcript"] .timelineContainer .ui-slider-handle:after {
 	margin-top: 26px;
 }
 
+.controlsContainer button {
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+}
+
+.controlsContainer .playButton.playing {
+	background: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:play?source=test') no-repeat;
+}
+
+.controlsContainer .playButton {
+	background: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:pause?source=test') no-repeat;
+}
+
 body[data-view="transcript"] .controlsContainer {
 	margin-top: 10px;
-} 
+}
 
 /*******************
 * Media Queries

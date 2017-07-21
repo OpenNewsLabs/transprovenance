@@ -27,8 +27,13 @@ $(document).ready( function() {
 		$('.videoDuration').text( formatTime($('#video')[0].duration) );
 	});
 
-	$('.playButton').click(playVideo);
-	$('.pauseButton').click(pauseVideo);
+	$('.playButton').click(function() {
+		if (isPlaying) {
+			pauseVideo();
+		} else {
+			playVideo();
+		}
+	});
 
 	$('.globalControl#videoControl').click(function() {
 		$('.globalControl').removeClass('active');
@@ -76,11 +81,13 @@ function playVideo() {
 	if (isPlaying) { return; }
 	isPlaying = true;
 	$('#video')[0].play();
+	$('.playButton').removeClass('playing');
 }
 
 function pauseVideo() {
 	isPlaying = false;
 	$('#video')[0].pause();
+	$('.playButton').addClass('playing');
 	updater();
 }
 
@@ -163,8 +170,8 @@ function loadTranscriptText() {
 	$.getJSON( "./data/recap-transcript.json", function( data ) {
 		var items = [];
 		$.each( data.words, function( key, val ) {
-			if (val.alignedWord) {
-				$('#transcript p').append('<span data-m="' + (val.start * 1000) + '">' + val.alignedWord + ' </span>');
+			if (val.word) {
+				$('#transcript p').append('<span data-m="' + (val.start * 1000) + '">' + val.word + ' </span>');
 			}
 		});
 
