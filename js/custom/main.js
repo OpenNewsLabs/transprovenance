@@ -178,3 +178,15 @@ function updateScrolling() {
     var currentScrollTop = $('.transcriptContainer').scrollTop();
     $('.transcriptContainer').stop().animate({scrollTop:percentScrolled}, 500);
 }
+
+function showOriginalSource(source) {
+	$('body').attr('data-original', 'yes');
+
+	console.log(source);
+}
+
+function hideOriginalSource() {
+	console.log('hide');
+
+	$('body').attr('data-original', 'no');
+}
