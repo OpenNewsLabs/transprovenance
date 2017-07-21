@@ -179,9 +179,13 @@ function updateScrolling() {
 }
 
 function showOriginalSource(source) {
+	$('body').attr('data-original', 'yes');
+
 	console.log(source);
 }
 
 function hideOriginalSource() {
 	console.log('hide');
+
+	$('body').attr('data-original', 'no');
 }
