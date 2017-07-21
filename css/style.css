@@ -23,12 +23,61 @@ body * {
 	color: gray;
 }
 
-.videoContainer, .originalContainer {
+.fullContainer {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 600px;
+	height: 400px;
+	margin-left: -300px;
+	background: #0000ff;
+}
+
+body[data-view="transcript"] .fullContainer {
+	top: 50%;
+	left: 10px;
+	width: 300px;
+	height: 400px;
+	margin-top: -240px;
+	margin-left: 0px;
+}
+
+body[data-view="transcript"] .videoContainer {
+	height: 100%;
+}
+
+body[data-view="transcript"] .timelineContainer {
+	top: 0px;
+	right: -20px;
+	width: 20px;
+	height: 100%;
+}
+
+body[data-view="transcript"] .originalContainer {
+	top: 50%;
+	left: auto;
+	right: 10px;
+	width: 400px;
+	height: 300px;
+	margin-top: -180px;
+	margin-left: 0px;
+}
+
+.originalContainer {
+	position: absolute;
+	top: 600px;
+	left: 50%;
+	width: 200px;
+	height: 120px;
+	margin-left: -100px;
+	background: #00ff00;
+}
+
+.videoContainer {
 	position: relative;
 	width: 100%;
 	margin-top: 10px;
 	min-height: 400px;
-	background: #00ff00;
 }
 
 .videoContainer video, .originalContainer video {
@@ -57,11 +106,10 @@ body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] 
 	opacity: 1;
 }
 
-body[data-view="transcript"] .videoContainer {
-	width: 300px;
-}
-
 .timelineContainer {
+	position: absolute;
+	top: auto;
+	bottom: -20px;
 	background: #AFAFAF;
 	height: 20px;
 	width: 100%;
@@ -73,7 +121,13 @@ body[data-view="transcript"] .videoContainer {
 	border-right: 2px solid #000000;
 }
 
+body[data-view="transcript"] .timelineContainer .ui-slider-range {
+	border-right: none;
+	border-top: 2px solid #000000;
+}
+
 .timelineContainer .ui-slider-handle {
+	position: absolute;
 	top: 0px;
 	height: 100%;
 	width: 16px;
@@ -93,6 +147,26 @@ body[data-view="transcript"] .videoContainer {
 	border-bottom: 12px solid #000000;
 	border-left: 8px solid transparent;
 	border-right: 8px solid transparent;
+}
+
+body[data-view="transcript"] .timelineContainer .ui-slider-handle {
+	top: auto;
+	left: 0px;
+	bottom: auto;
+	height: 16px;
+	width: 100%;
+	margin-left: 0px;
+	margin-bottom: -13px;
+}
+
+
+body[data-view="transcript"] .timelineContainer .ui-slider-handle:after {
+	left: auto;
+	right: 0px;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+	border-right: 8px solid #000;
+	border-left: none;
 }
 
 .controlsContainer {
