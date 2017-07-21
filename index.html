@@ -29,17 +29,29 @@
 		
 	<div class="container">
 
-		<div class="videoContainer">
-			<video id="video" src="media/sample-6m-blue.mp4"></video>
-		</div>
-		<div class="timelineContainer"></div>
-		<div class="controlsContainer">
-			<button class="playButton">Play</button>
-			<button class="pauseButton">Pause</button>
-			<span>Current Time: <span class="currentTime"></span> / Duration: <span class="videoDuration"></span></span>
-		</div>
+		
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-sm-12">
+				<div class="videoContainer">
+					<video id="video" src="media/sample-6m-blue.mp4"></video>
+					<div class="transcriptContainer">Transcript</div>
+				</div>
+				<div class="timelineContainer"></div>
+				<div class="controlsContainer">
+					<button class="playButton">Play</button>
+					<button class="pauseButton">Pause</button>
+					<span>Current Time: <span class="currentTime"></span> / Duration: <span class="videoDuration"></span></span>
+				</div>
+			</div>
 
-		<div class="originalContainer"></div>
+			<div class="col-md-6 col-md-offset-3 col-sm-12">
+				<div class="originalContainer">
+					<video id="original1" class="originalVideo" src="media/sample-6m-blue.mp4"></video>
+					<div class="originalTranscriptContainer">Original Transcript</div>
+				</div>
+			</div>
+
+		</div>
 
 	</div>
 
