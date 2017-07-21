@@ -67,8 +67,9 @@ $(document).ready( function() {
 	});
 
 	loadTranscriptText("./data/recap-transcript.json", 'transcript', 'video');
+	loadTranscriptText('./data/full-transcript.json', 'transcript__original', 'original1')
 
-	hyperaudiolite.init('transcript', 'video');
+	//hyperaudiolite.init('transcript', 'video');
 
 });
 
@@ -90,7 +91,7 @@ function setCurrentTime(seconds) {
 
 	$('#video')[0].currentTime = seconds;
 
-	updater();
+	//updater();
 
 }
 
@@ -118,6 +119,7 @@ function updater() {
 function updateMediaActiveStates(time) {
 
 	//console.log("update active states");
+	
 	updateScrolling();
 
 
@@ -129,10 +131,10 @@ function updateMediaActiveStates(time) {
 			endTime = parseInt( currentItem.attr('data-end') );
 
 		if ( startTime <= time && endTime >= time ) {
-			console.log(startTime);
+			
 			if (!currentItem.hasClass('active')) {
 				currentItem.addClass('active');
-				loadTranscriptText(currentItem.attr('data-transcript-source'), 'transcript__original', 'original1')
+				//loadTranscriptText(currentItem.attr('data-transcript-source'), 'transcript__original', 'original1')
 			}
 
 		} else {

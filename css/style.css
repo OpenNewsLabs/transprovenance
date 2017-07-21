@@ -116,6 +116,10 @@ body[data-view="video"] .transcriptContainer {
 	background: #312e2e;
 }
 
+body[data-view="transcript"] .originalContainer {
+	margin-right: 0px;
+}
+
 .videoContainer {
 	position: relative;
 	width: 100%;
