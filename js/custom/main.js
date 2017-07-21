@@ -27,8 +27,13 @@ $(document).ready( function() {
 		$('.videoDuration').text( formatTime($('#video')[0].duration) );
 	});
 
-	$('.playButton').click(playVideo);
-	$('.pauseButton').click(pauseVideo);
+	$('.playButton').click(function() {
+		if (isPlaying) {
+			pauseVideo();
+		} else {
+			playVideo();
+		}
+	});
 
 	$('.globalControl#videoControl').click(function() {
 		$('.globalControl').removeClass('active');
@@ -74,11 +79,13 @@ function playVideo() {
 	if (isPlaying) { return; }
 	isPlaying = true;
 	$('#video')[0].play();
+	$('.playButton').removeClass('playing');
 }
 
 function pauseVideo() {
 	isPlaying = false;
 	$('#video')[0].pause();
+	$('.playButton').addClass('playing');
 	updater();
 }
 
