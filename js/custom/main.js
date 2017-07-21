@@ -34,12 +34,14 @@ $(document).ready( function() {
 		$('.globalControl').removeClass('active');
 		$(this).addClass('active');
 		$('body').attr('data-view', 'video');
+		$('.timelineContainer').slider('option', 'orientation', 'horizontal');
 	});
 
 	$('.globalControl#transcriptControl').click(function() {
 		$('.globalControl').removeClass('active');
 		$(this).addClass('active');
 		$('body').attr('data-view', 'transcript');
+		$('.timelineContainer').slider('option', 'orientation', 'vertical');
 	});
 
 	loadTranscriptText();
