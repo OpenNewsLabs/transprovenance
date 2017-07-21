@@ -42,7 +42,7 @@ $(document).ready( function() {
 		$('body').attr('data-view', 'transcript');
 	});
 
-	hyperaudiolite.init('transcript', 'video');
+	loadTranscriptText();
 });
 
 
@@ -150,6 +150,17 @@ function formatTime(aNumber) {
 function convertToPercentage(pixelValue, maxValue) {
 	var percentage = (pixelValue / maxValue) * 100;
 	return percentage;
+}
+
+function loadTranscriptText() {
+	$.getJSON( "./data/recap-transcript.json", function( data ) {
+		var items = [];
+		$.each( data.words, function( key, val ) {
+			$('#transcript p').append('<span data-m="' + (val.start * 1000) + '">' + val.alignedWord + ' </span>');
+		});
+
+		hyperaudiolite.init('transcript', 'video');
+	});
 }
 
 function updateScrolling() {
