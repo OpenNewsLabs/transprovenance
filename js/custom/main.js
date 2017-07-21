@@ -1,6 +1,21 @@
 var updaterInterval,
 	isPlaying;
 
+// I know this is terrible, but need the var here as well... TODO: abstract it
+var annotations = [
+  {
+    "source": "media/demo-full.mp4",
+    "start": 35,
+    "end": 62,
+    "originalStart": 883
+  },
+  {
+    "source": "media/demo-full.mp4",
+    "start": 77,
+    "end": 122
+  }
+];
+
 $(document).ready( function() {
 
 	$('#video').on('loadedmetadata', function() {
@@ -103,7 +118,7 @@ function updateMediaActiveStates(time) {
 	//console.log("update active states");
 	updateScrolling();
 
-	
+
 	var timelineItems = $('.timelineItem');
 
 	timelineItems.each(function() {
@@ -179,8 +194,14 @@ function updateScrolling() {
 }
 
 function showOriginalSource(source) {
-	$('body').attr('data-original', 'yes');
+	var recapVideoEl = document.getElementById('video'),
+		sourceVideoEl = document.getElementById('original1'),
+		currentTime = $('#video')[0].currentTime;
 
+	$('body').attr('data-original', 'yes');
+	recapVideoEl.pause();
+	sourceVideoEl.play();
+	sourceVideoEl.currentTime = annotations[0].originalStart + (currentTime - annotations[0].start);
 	console.log(source);
 }
 

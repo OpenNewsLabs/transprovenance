@@ -2,7 +2,8 @@ var annotations = [
   {
     "source": "media/demo-full.mp4",
     "start": 35,
-    "end": 62
+    "end": 62,
+    "originalStart": 883
   },
   {
     "source": "media/demo-full.mp4",
