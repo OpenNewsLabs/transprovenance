@@ -3,8 +3,100 @@
 *******************/
 
 body {
+	padding-top: 70px;
 	font-family: Arial,Helvetica,sans-serif;
 	background: #efefef;
+}
+
+body * {
+	transition-property: all;
+	transition-duration: 400ms;
+}
+
+#globalControls {
+	position: fixed;
+	top: 10px;
+	right: 16px;
+}
+
+.unread {
+	color: gray;
+}
+
+.videoContainer, .originalContainer {
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+	min-height: 400px;
+	background: #00ff00;
+}
+
+.videoContainer video, .originalContainer video {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+body[data-view="video"] video {
+	opacity: 1;
+}
+
+.videoContainer .transcriptContainer, .originalContainer .originalTranscriptContainer {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] .originalTranscriptContainer {
+	opacity: 1;
+}
+
+body[data-view="transcript"] .videoContainer {
+	width: 300px;
+}
+
+.timelineContainer {
+	background: #AFAFAF;
+	height: 20px;
+	width: 100%;
+}
+
+.timelineContainer .ui-slider-range {
+	background: #888888;
+	box-sizing: border-box;
+	border-right: 2px solid #000000;
+}
+
+.timelineContainer .ui-slider-handle {
+	top: 0px;
+	height: 100%;
+	width: 16px;
+	margin-left: -8px;
+	background: transparent;
+}
+
+.timelineContainer .ui-slider-handle:focus {
+	outline: none;
+}
+
+.timelineContainer .ui-slider-handle:after {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	content: "";
+	border-bottom: 12px solid #000000;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+
+.controlsContainer {
+	margin-top: 10px;
 }
 
 /*******************
@@ -12,15 +104,15 @@ body {
 *******************/
 
 @media (min-width: 1220px) and (max-width: 2000px) {
-	
+
 }
 
 @media (min-width: 1010px) and (max-width: 1220px) {
-	
+
 }
 
 @media (min-width: 650px) and (max-width: 1010px) {
-	
+
 }
 
 @media (max-width: 650px) {
@@ -28,5 +120,5 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-	
+
 }
