@@ -53,6 +53,10 @@ body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] 
 	opacity: 1;
 }
 
+body[data-view="transcript"] .videoContainer {
+	width: 300px;
+} 
+
 .timelineContainer {
 	background: #AFAFAF;
 	height: 20px;
