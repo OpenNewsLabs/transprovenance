@@ -11,6 +11,7 @@ body {
 body * {
 	transition-property: all;
 	transition-duration: 400ms;
+	box-sizing: border-box;
 }
 
 #globalControls {
@@ -30,7 +31,7 @@ body * {
 	width: 600px;
 	height: 400px;
 	margin-left: -300px;
-	background: #0000ff;
+	background: #312e2e;
 }
 
 body[data-view="transcript"] .fullContainer {
@@ -40,6 +41,8 @@ body[data-view="transcript"] .fullContainer {
 	height: 400px;
 	margin-top: -240px;
 	margin-left: 0px;
+	background: white;
+	padding: 1em;
 }
 
 body[data-view="transcript"] .videoContainer {
@@ -61,6 +64,8 @@ body[data-view="transcript"] .originalContainer {
 	height: 300px;
 	margin-top: -180px;
 	margin-left: 0px;
+	background: white;
+	padding: 1em;;
 }
 
 body[data-view="video"] .transcriptContainer {
@@ -74,7 +79,7 @@ body[data-view="video"] .transcriptContainer {
 	width: 200px;
 	height: 120px;
 	margin-left: -100px;
-	background: #00ff00;
+	background: #312e2e;
 }
 
 .videoContainer {
@@ -110,9 +115,9 @@ body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] 
 }
 
 .videoContainer .transcriptContainer #transcript {
-	height: 100%;
+	height: calc(100% - 1em);
 	overflow: auto;
-} 
+}
 
 .timelineContainer {
 	position: absolute;
