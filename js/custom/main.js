@@ -158,7 +158,7 @@ function loadTranscriptText() {
 	$.getJSON( "./data/recap-transcript.json", function( data ) {
 		var items = [];
 		$.each( data.words, function( key, val ) {
-			if (val.alignedWord !== 'undefined') {
+			if (val.alignedWord) {
 				$('#transcript p').append('<span data-m="' + (val.start * 1000) + '">' + val.alignedWord + ' </span>');
 			}
 		});
