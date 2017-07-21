@@ -25,7 +25,7 @@ body * {
 
 .fullContainer {
 	position: absolute;
-	top: 0px;
+	top: 100px;
 	left: 50%;
 	width: 600px;
 	height: 400px;
@@ -121,6 +121,13 @@ body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] 
 	background: #AFAFAF;
 	height: 20px;
 	width: 100%;
+}
+
+.timelineItem {
+	position: absolute;
+	bottom: -10px;
+	height: 10px;
+	background: #ff0000;
 }
 
 .timelineContainer .ui-slider-range {

@@ -55,6 +55,8 @@ function initVideo() {
 	$('#video').on('timeupdate', function() {
 		updater();
 	});
+
+	renderAnnotations(annotations);
 }
 
 function setCurrentTime(seconds) {
