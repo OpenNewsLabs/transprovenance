@@ -1,28 +1,13 @@
 var annotations = [
   {
-    "source": "media/demo-recap.mp4",
-    "start": 0,
-    "end": 35
-  },
-  {
     "source": "media/demo-full.mp4",
     "start": 35,
     "end": 62
   },
   {
-    "source": "media/demo-recap.mp4",
-    "start": 62,
-    "end": 77
-  },
-  {
     "source": "media/demo-full.mp4",
     "start": 77,
     "end": 122
-  },
-  {
-    "source": "media/demo-recap.mp4",
-    "start": 122,
-    "end": 132
   }
 ];
 
