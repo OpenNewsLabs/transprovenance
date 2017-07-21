@@ -158,6 +158,10 @@ function convertToPercentage(pixelValue, maxValue) {
 
 function loadTranscriptText(source, target, video) {
 	$.getJSON( source, function( data ) {
+		if (data.words) {
+			$('#'+target+'p').html('');
+		}
+		
 		var items = [];
 		$.each( data.words, function( key, val ) {
 			if (val.word) {
