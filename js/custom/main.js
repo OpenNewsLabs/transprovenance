@@ -158,7 +158,9 @@ function loadTranscriptText() {
 	$.getJSON( "./data/recap-transcript.json", function( data ) {
 		var items = [];
 		$.each( data.words, function( key, val ) {
-			$('#transcript p').append('<span data-m="' + (val.start * 1000) + '">' + val.alignedWord + ' </span>');
+			if (val.alignedWord !== 'undefined') {
+				$('#transcript p').append('<span data-m="' + (val.start * 1000) + '">' + val.alignedWord + ' </span>');
+			}
 		});
 
 		hyperaudiolite.init('transcript', 'video');

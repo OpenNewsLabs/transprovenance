@@ -63,6 +63,10 @@ body[data-view="transcript"] .originalContainer {
 	margin-left: 0px;
 }
 
+body[data-view="video"] .transcriptContainer {
+	pointer-events: none;
+}
+
 .originalContainer {
 	position: absolute;
 	top: 600px;
