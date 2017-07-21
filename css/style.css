@@ -37,7 +37,7 @@ body * {
 body[data-view="transcript"] .fullContainer {
 	top: 50%;
 	left: 10px;
-	width: 300px;
+	width: 400px;
 	height: 400px;
 	margin-top: -240px;
 	margin-left: 0px;
@@ -61,8 +61,8 @@ body[data-view="transcript"] .originalContainer {
 	left: auto;
 	right: 10px;
 	width: 400px;
-	height: 300px;
-	margin-top: -180px;
+	height: 400px;
+	margin-top: -240px;
 	margin-left: 0px;
 	background: white;
 	padding: 1em;;
@@ -110,11 +110,16 @@ body[data-view="video"] video {
 	opacity: 0;
 }
 
+.originalContainer .originalTranscriptContainer {
+	padding: 1em;
+}
+
 body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] .originalTranscriptContainer {
 	opacity: 1;
 }
 
-.videoContainer .transcriptContainer #transcript {
+.videoContainer .transcriptContainer #transcript,
+.originalContainer .originalTranscriptContainer #transcript__original {
 	height: calc(100% - 1em);
 	overflow: auto;
 }
