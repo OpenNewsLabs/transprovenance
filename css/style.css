@@ -7,6 +7,10 @@ body {
 	background: #efefef;
 }
 
+.unread {
+	color: gray;
+}
+
 .videoContainer, .originalContainer {
 	position: relative;
 	width: 100%;
@@ -73,15 +77,15 @@ body {
 *******************/
 
 @media (min-width: 1220px) and (max-width: 2000px) {
-	
+
 }
 
 @media (min-width: 1010px) and (max-width: 1220px) {
-	
+
 }
 
 @media (min-width: 650px) and (max-width: 1010px) {
-	
+
 }
 
 @media (max-width: 650px) {
@@ -89,5 +93,5 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-	
+
 }

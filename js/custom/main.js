@@ -3,14 +3,14 @@ var videoDuration = 60,
 	isPlaying;
 
 $(document).ready( function() {
-	
+
 	$('.timelineContainer').slider({
 		value: 0,
 		step: 0.01,
 		orientation: "horizontal",
 		range: "min",
 		max: videoDuration,
-		animate: false,			
+		animate: false,
 		create: function(evt, ui) {
 			// on create
 		},
@@ -26,10 +26,11 @@ $(document).ready( function() {
 		initVideo();
 		$('.videoDuration').text( formatTime($('#video')[0].duration) );
 	});
-	
+
 	$('.playButton').click(playVideo);
 	$('.pauseButton').click(pauseVideo);
-	
+
+	hyperaudiolite.init('transcript', 'video');
 });
 
 
@@ -74,6 +75,7 @@ function updater() {
 function updateMediaActiveStates(time) {
 
 	console.log("update active states");
+	updateScrolling();
 
 	/*
 	var mediaElement;
@@ -136,4 +138,14 @@ function formatTime(aNumber) {
 function convertToPercentage(pixelValue, maxValue) {
 	var percentage = (pixelValue / maxValue) * 100;
 	return percentage;
+}
+
+function updateScrolling() {
+    var percentPlayed = $('#video')[0].currentTime / $('#video')[0].duration * 100;
+
+    var containerHeight = $('.transcriptContainer').height();
+    var containerScrollHeight = $('.transcriptContainer')[0].scrollHeight;
+    var percentScrolled = (containerScrollHeight-containerHeight) / 100 * percentPlayed;
+    var currentScrollTop = $('.transcriptContainer').scrollTop();
+    $('.transcriptContainer').stop().animate({scrollTop:percentScrolled}, 500);
 }
