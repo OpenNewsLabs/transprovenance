@@ -80,7 +80,6 @@ body[data-view="video"] .transcriptContainer {
 .videoContainer {
 	position: relative;
 	width: 100%;
-	margin-top: 10px;
 	min-height: 400px;
 }
 
@@ -109,6 +108,11 @@ body[data-view="video"] video {
 body[data-view="transcript"] .transcriptContainer, body[data-view="transcript"] .originalTranscriptContainer {
 	opacity: 1;
 }
+
+.videoContainer .transcriptContainer #transcript {
+	height: 100%;
+	overflow: auto;
+} 
 
 .timelineContainer {
 	position: absolute;
@@ -174,8 +178,12 @@ body[data-view="transcript"] .timelineContainer .ui-slider-handle:after {
 }
 
 .controlsContainer {
-	margin-top: 10px;
+	margin-top: 26px;
 }
+
+body[data-view="transcript"] .controlsContainer {
+	margin-top: 10px;
+} 
 
 /*******************
 * Media Queries
