@@ -49,7 +49,7 @@ $(document).ready( function() {
 		renderAnnotations(annotations, 'y');
 	});
 
-	loadTranscriptText();
+	loadTranscriptText("./data/recap-transcript.json", 'transcript', 'video');
 
 	hyperaudiolite.init('transcript', 'video');
 
@@ -103,7 +103,7 @@ function updateMediaActiveStates(time) {
 	//console.log("update active states");
 	updateScrolling();
 
-	
+
 	var timelineItems = $('.timelineItem');
 
 	timelineItems.each(function() {
@@ -115,6 +115,7 @@ function updateMediaActiveStates(time) {
 			console.log(startTime);
 			if (!currentItem.hasClass('active')) {
 				currentItem.addClass('active');
+				loadTranscriptText(currentItem.attr('data-transcript-source'), 'transcript__original', 'original1')
 			}
 
 		} else {
@@ -155,16 +156,16 @@ function convertToPercentage(pixelValue, maxValue) {
 	return percentage;
 }
 
-function loadTranscriptText() {
-	$.getJSON( "./data/recap-transcript.json", function( data ) {
+function loadTranscriptText(source, target, video) {
+	$.getJSON( source, function( data ) {
 		var items = [];
 		$.each( data.words, function( key, val ) {
 			if (val.word) {
-				$('#transcript p').append('<span data-m="' + (val.start * 1000) + '">' + val.word + ' </span>');
+				$('#'+target+' p').append('<span data-m="' + (val.start * 1000) + '">' + val.word + ' </span>');
 			}
 		});
 
-		hyperaudiolite.init('transcript', 'video');
+		hyperaudiolite.init(target, video);
 	});
 }
 
