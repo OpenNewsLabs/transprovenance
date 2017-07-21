@@ -1,18 +1,28 @@
 var annotations = [
   {
-    "source": "1.mp4",
+    "source": "media/demo-recap.mp4",
     "start": 0,
-    "end": 4
+    "end": 35
   },
   {
-    "source": "2.mp4",
-    "start": 12.0,
-    "end": 16
+    "source": "media/demo-full.mp4",
+    "start": 35,
+    "end": 62
   },
   {
-    "source": "3.mp4",
-    "start": 20.0,
-    "end": 30
+    "source": "media/demo-recap.mp4",
+    "start": 62,
+    "end": 77
+  },
+  {
+    "source": "media/demo-full.mp4",
+    "start": 77,
+    "end": 122
+  },
+  {
+    "source": "media/demo-recap.mp4",
+    "start": 122,
+    "end": 132
   }
 ];
 
@@ -35,13 +45,13 @@ $(document).ready( function() {
 
 
 function renderAnnotations(annotationItems, axis) {
-  
+
   $('.timelineContainer .timelineItem').remove();
 
   for (var i=0; i<annotationItems.length; i++) {
 
     var thisItem = annotationItems[i];
-    
+
     var leftPercent = convertToPercentage(thisItem.start, $('#video')[0].duration),
         widthPercent = convertToPercentage(thisItem.end - thisItem.start, $('#video')[0].duration);
 
@@ -58,7 +68,7 @@ function renderAnnotations(annotationItems, axis) {
         height: widthPercent + '%'
       });
     }
-    
+
 
     timelineItem.click(function(evt) {
       alert( $(this).attr('data-source') );
