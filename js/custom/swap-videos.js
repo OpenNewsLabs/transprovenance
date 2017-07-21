@@ -18,6 +18,7 @@ var annotations = [
 
 
 $(document).ready( function() {
+  /*
   $('.timelineContainer').click(function() {
     var currentTime = $('#video')[0].currentTime,
       displayVid1 = (currentTime < 35) || (currentTime > 62 && currentTime < 77) || (currentTime > 122),
@@ -29,11 +30,14 @@ $(document).ready( function() {
       alert('Video #2');
     }
   });
+  */
 });
 
 
-function renderAnnotations(annotationItems) {
+function renderAnnotations(annotationItems, axis) {
   
+  $('.timelineContainer .timelineItem').remove();
+
   for (var i=0; i<annotationItems.length; i++) {
 
     var thisItem = annotationItems[i];
@@ -41,12 +45,20 @@ function renderAnnotations(annotationItems) {
     var leftPercent = convertToPercentage(thisItem.start, $('#video')[0].duration),
         widthPercent = convertToPercentage(thisItem.end - thisItem.start, $('#video')[0].duration);
 
-    var timelineItem = $('<div class="timelineItem" data-source="'+ thisItem.source +'"></div>');
+    var timelineItem = $('<div class="timelineItem" data-source="'+ thisItem.source +'" data-start="'+ thisItem.start +'" data-end="'+ thisItem.end +'" ></div>');
 
-    timelineItem.css({
-      left: leftPercent + '%',
-      width: widthPercent + '%'
-    });
+    if (axis == 'x') {
+      timelineItem.css({
+        left: leftPercent + '%',
+        width: widthPercent + '%'
+      });
+    } else {
+      timelineItem.css({
+        bottom: leftPercent + '%',
+        height: widthPercent + '%'
+      });
+    }
+    
 
     timelineItem.click(function(evt) {
       alert( $(this).attr('data-source') );
