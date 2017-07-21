@@ -45,6 +45,9 @@ $(document).ready( function() {
 	});
 
 	loadTranscriptText();
+
+	hyperaudiolite.init('transcript', 'video');
+
 });
 
 
