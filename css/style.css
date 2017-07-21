@@ -7,6 +7,55 @@ body {
 	background: #efefef;
 }
 
+.videoContainer, .originalContainer {
+	width: 600px;
+	height: 400px;
+	background: #00ff00;
+}
+
+.videoContainer video, .originalContainer video {
+	width: 100%;
+	height: 100%;
+}
+
+.timelineContainer {
+	background: #AFAFAF;
+	height: 20px;
+	width: 100%;
+}
+
+.timelineContainer .ui-slider-range {
+	background: #888888;
+	box-sizing: border-box;
+	border-right: 2px solid #000000;
+}
+
+.timelineContainer .ui-slider-handle {
+	top: 0px;
+	height: 100%;
+	width: 16px;
+	margin-left: -8px;
+	background: transparent;
+}
+
+.timelineContainer .ui-slider-handle:focus {
+	outline: none;
+}
+
+.timelineContainer .ui-slider-handle:after {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	content: "";
+	border-bottom: 12px solid #000000;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+
+.controlsContainer {
+	margin-top: 10px;
+}
+
 /*******************
 * Media Queries
 *******************/

@@ -3,14 +3,16 @@
 	<head class="html5">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
-		<title>Sample Page</title>
+		<title>transprovenance - TextAV</title>
 		
 		<link rel="stylesheet" href="./css/normalize.css">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/bootstrap-theme.css">
+		<link rel="stylesheet" href="./css/jquery-ui.min.css">
 		<link rel="stylesheet" href="./css/style.css">
 		
 		<script type="text/javascript" src="./js/includes/jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="./js/includes/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="./js/includes/respond.min.js"></script>
 		<script type="text/javascript" src="./js/includes/bootstrap.min.js"></script>
 		
@@ -25,5 +27,21 @@
 	</head>
 	<body>
 		
+	<div class="container">
+
+		<div class="videoContainer">
+			<video id="video" src="media/sample-6m-blue.mp4"></video>
+		</div>
+		<div class="timelineContainer"></div>
+		<div class="controlsContainer">
+			<button class="playButton">Play</button>
+			<button class="pauseButton">Pause</button>
+			<span>Current Time: <span class="currentTime"></span> / Duration: <span class="videoDuration"></span></span>
+		</div>
+
+		<div class="originalContainer"></div>
+
+	</div>
+
 	</body>
 </html>
