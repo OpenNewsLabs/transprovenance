@@ -39,6 +39,7 @@ $(document).ready( function() {
 		$('body').attr('data-view', 'video');
 		$('.timelineContainer').slider('option', 'orientation', 'horizontal');
 		renderAnnotations(annotations, 'x');
+		updater();
 	});
 
 	$('.globalControl#transcriptControl').click(function() {
@@ -47,6 +48,7 @@ $(document).ready( function() {
 		$('body').attr('data-view', 'transcript');
 		$('.timelineContainer').slider('option', 'orientation', 'vertical');
 		renderAnnotations(annotations, 'y');
+		updater();
 	});
 
 	loadTranscriptText();

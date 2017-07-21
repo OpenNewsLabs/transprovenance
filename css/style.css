@@ -58,15 +58,49 @@ body[data-view="transcript"] .timelineContainer {
 
 body[data-view="transcript"] .originalContainer {
 	top: 50%;
-	left: auto;
 	right: 10px;
 	width: 400px;
 	height: 300px;
 	margin-top: -180px;
-	margin-left: 0px;
+	margin-right: 0px;
 	background: white;
-	padding: 1em;;
+	padding: 1em;
 }
+
+
+
+body[data-view="video"][data-original="yes"] .fullContainer {
+	top: 40px;
+	width: 200px;
+	height: 110px;
+	margin-left: -90px;
+}
+
+body[data-view="video"][data-original="yes"] .originalContainer {
+	top: 40%;
+	width: 600px;
+	height: 400px;
+	margin-right: -300px;
+}
+
+body[data-view="transcript"][data-original="yes"] .fullContainer {
+	top: 50%;
+	width: 200px;
+	height: 360px;
+	margin-top: -180px;
+	margin-right: 0px;
+}
+
+body[data-view="transcript"][data-original="yes"] .originalContainer {
+	top: 50%;
+	right: 10px;
+	width: 400px;
+	height: 600px;
+	margin-top: -300px;
+	margin-right: 0px;
+}
+
+
 
 body[data-view="video"] .transcriptContainer {
 	pointer-events: none;
@@ -75,17 +109,17 @@ body[data-view="video"] .transcriptContainer {
 .originalContainer {
 	position: absolute;
 	top: 600px;
-	left: 50%;
+	right: 50%;
 	width: 200px;
 	height: 120px;
-	margin-left: -100px;
+	margin-right: -100px;
 	background: #312e2e;
 }
 
 .videoContainer {
 	position: relative;
 	width: 100%;
-	min-height: 400px;
+	height: 100%;
 }
 
 .videoContainer video, .originalContainer video {
